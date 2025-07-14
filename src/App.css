@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -40,3 +40,48 @@
 .read-the-docs {
   color: #888;
 }
+
+.App {
+  text-align: center;
+  background-color: #151414;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  position: relative; /* changed from fixed to avoid overlap if page grows */
+  bottom: 0;
+  width: 100%;
+}
+
+.title-heading {
+  color: #FFF;
+  font-family: 'Anton', sans-serif;
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: stretch;
+}
+/* Hero.css */
+section {
+  background-image: repeating-linear-gradient(
+    to right,
+    #151414,
+    #151414 50px,
+    #1a1a1a 50px,
+    #1a1a1a 100px
+  );
+}
+
+
+
