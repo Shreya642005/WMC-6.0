@@ -82,6 +82,15 @@ section {
     #1a1a1a 100px
   );
 }
+.bg-stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    #151414,
+    #151414 50px,
+    #1b1b1b 50px,
+    #1b1b1b 100px
+  );
+}
 
 
 

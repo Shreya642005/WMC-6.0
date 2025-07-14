@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar() {
   return (
     // Outer wrapper: thinner gradient border (use p-[0.7px] for fine control)
-    <div className="mt-4 p-[0.7px] bg-gradient-to-r from-[#020202] via-[#2c2c2c] to-[#686868]">
+    <div className="mt-10 p-[0.7px] bg-gradient-to-r from-[#020202] via-[#2c2c2c] to-[#686868]">
       <header className="bg-[rgba(2,2,2,0.24)] backdrop-blur-sm border border-black">
         <nav className="max-w-[1280px] mx-auto px-4 py-2 flex items-center justify-between">
           {/* Logo */}

@@ -2,33 +2,40 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-between px-10 bg-[#151414] text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-between px-10 bg-stripes text-white overflow-hidden">
 
       {/* Background Logo (Red faded spider logo) */}
       <img
         src="/images/BackgroundLogo.png"
         alt="Background Logo"
-        className="absolute left-1/2 top-1/2 w-[400px] opacity-10 -translate-x-1/2 -translate-y-1/2"
+        className="absolute left-1/2 top-1/2 w-[400px] opacity-70 -translate-x-1/2 -translate-y-1/2 z-0"
       />
+
+
 
       {/* Top Web overlays */}
       <img
         src="/images/web2.png"
-        className="absolute top-0 left-0 w-[300px] opacity-80"
+        className="fixed top-0 left-0 w-[300px] opacity-80 z-50"
         alt="web-top-left"
       />
+
+
       <img
         src="/images/web1.png"
-        className="absolute top-0 right-0 w-[200px] opacity-70"
+        className="fixed top-0 right-0 w-[200px] opacity-70 z-50 pointer-events-none"
         alt="web-top-right"
       />
 
+
       {/* Left Text Content */}
       <div className="max-w-xl z-10">
-        <h1 className="text-[88px] font-['Anton'] font-normal leading-none">
-          <span className="text-white">PETER’S</span>{" "}
-          <span className="text-red-600">VICTORY DIARIES</span>
+        <h1 className="text-6xl sm:text-7xl font-extrabold tracking-tight leading-tight text-white">
+          <span className="text-white">PETER’S </span>
+          <span className="text-[#a62121]">VICTORY DIARIES</span>
         </h1>
+
+
         <p className="mt-6 text-lg text-gray-300">
           A web-slinger's chronicle of battles fought and lives saved. <br />
           After the world forgot Peter Parker, this digital journal <br />
@@ -43,9 +50,10 @@ const Hero = () => {
               className="absolute -top-4 -left-6 w-16 opacity-70"
               alt="web left"
             />
-            <button className="bg-gradient-to-r from-blue-700 via-purple-800 to-red-600 px-5 py-2 font-semibold text-white shadow-md hover:scale-105 transition z-10 relative">
+            <button className="bg-[#213A8F] text-white px-6 py-2 font-bold uppercase text-sm shadow-md hover:bg-[#1a2f70] transition">
               NEW MISSION LOG
             </button>
+
           </div>
 
           <div className="relative">
@@ -54,21 +62,24 @@ const Hero = () => {
               className="absolute -top-4 -right-6 w-16 opacity-70"
               alt="web right"
             />
-            <button className="border border-red-600 px-5 py-2 font-semibold text-white hover:bg-red-600 transition z-10 relative">
+            <button className="border border-red-600 text-white px-6 py-2 font-bold uppercase text-sm hover:bg-red-600 transition">
               VIEW ARCHIVES
             </button>
+
           </div>
         </div>
       </div>
 
       {/* Right Spiderman Image */}
-      <div className="z-10">
+      <div className="z-10 -mt-16 p-4">
         <img
           src="/images/Spiderman.png"
           alt="Spiderman"
-          className="w-[400px] md:w-[500px] drop-shadow-xl"
+          className="w-[400px] md:w-[460px] drop-shadow-[0_0_25px_rgba(255,0,0,0.25)]"
         />
       </div>
+
+
     </section>
   );
 };
