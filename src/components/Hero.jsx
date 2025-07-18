@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const spiderTranslate = Math.min(scrollY * 0.2, 50); // limit movement to 50px
+
   return (
     <section className="relative min-h-screen flex items-center justify-between px-10 bg-[#151414] text-white overflow-hidden">
 
-      {/* Background Logo (Red faded spider logo) */}
+      {/* Background Logo */}
       <img
         src="/images/BackgroundLogo.png"
         alt="Background Logo"
@@ -63,11 +76,11 @@ const Hero = () => {
       </div>
 
       {/* Right Spiderman Image */}
-      <div className="z-10 -mt-16 p-4">
+      <div className="z-10 p-4" style={{ transform: `translateY(${spiderTranslate + 40}px)` }}>
         <img
           src="/images/Spiderman.png"
           alt="Spiderman"
-          className="w-[400px] md:w-[460px] drop-shadow-[0_0_25px_rgba(255,0,0,0.25)]"
+          className="w-[400px] md:w-[460px] drop-shadow-[0_0_25px_rgba(255,0,0,0.4)]"
         />
       </div>
     </section>
