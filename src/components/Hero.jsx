@@ -20,7 +20,7 @@ const Hero = () => {
       <img
         src="/images/BackgroundLogo.png"
         alt="Background Logo"
-        className="absolute left-1/2 top-1/2 w-[400px] opacity-60 -translate-x-1/2 -translate-y-1/2 z-0"
+        className="absolute left-1/2 top-1/2 w-[400px] opacity-60 -translate-x-1/2 -translate-y-1/2 z-10"
       />
 
       {/* Web overlays */}
@@ -36,7 +36,7 @@ const Hero = () => {
       />
 
       {/* Left Text Content */}
-      <div className="z-20 text-left max-w-xl mt-10 md:mt-0">
+      <div className="z-10 text-left max-w-xl mt-10 md:mt-0">
         <h1 className="text-[50px] md:text-[80px] leading-tight font-['Anton'] font-normal">
           <span className="block text-white">PETER’S</span>
           <span className="block text-[#a62121]">VICTORY DIARIES</span>
@@ -76,7 +76,7 @@ const Hero = () => {
 
       {/* Spiderman + Thread */}
       <div
-        className="relative z-20 flex flex-col items-center mt-12 md:mt-0 md:absolute md:top-0 md:right-12"
+        className="relative z-10 flex flex-col items-center mt-12 md:mt-0 md:absolute md:top-0 md:right-12"
         style={{ transform: `translateY(${spiderTranslate}px)` }}
       >
         <img

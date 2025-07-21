@@ -344,7 +344,7 @@
 
   .submit-button:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(220, 38, 127, 0.3);
+    box-shadow: 0 10px 25px rgba(133, 6, 21, 0.601);
   }
 
   .submit-button:disabled {

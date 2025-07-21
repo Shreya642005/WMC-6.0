@@ -3,12 +3,14 @@ import React from 'react';
 export default function Navbar() {
   return (
     // Fixed top navbar
-    <div className="fixed top-0 left-0 w-full z-60 px-4">
-      {/* Outer gradient border effect */}
-      <div className="p-[0.7px] bg-gradient-to-r from-[#020202] via-[#2c2c2c] to-[#686868] rounded-md shadow-md max-w-[1100px] mx-auto mt-4">
-        {/* Transparent navbar background with reduced opacity */}
-        <header className="bg-transparent border border-transparent rounded-md opacity-70">
+    <div className="fixed top-0 left-0 w-full z-50 px-4">
+      {/* Gradient border wrapper */}
+      <div className="p-[1.3px] bg-gradient-to-r from-red-600 via-[#4d0000] to-black rounded-md shadow-md max-w-[1100px] mx-auto mt-4">
+        
+        {/* Navbar with gradient background */}
+        <header className="bg-gradient-to-r from-red-950 via-black to-black rounded-md opacity-95">
           <nav className="px-6 py-3 flex items-center justify-between">
+            
             {/* Logo */}
             <a href="#" aria-label="Brand" className="flex items-center">
               <img
@@ -35,6 +37,7 @@ export default function Navbar() {
                 </svg>
               </button>
             </div>
+
           </nav>
         </header>
       </div>
