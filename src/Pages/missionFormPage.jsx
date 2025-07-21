@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import axios from "axios"
 import "../styles/missionForm.css"
 
 const MissionFormPage = () => {
@@ -68,9 +69,32 @@ const MissionFormPage = () => {
 
     setIsSubmitting(true)
 
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      // Create FormData for file upload
+      const formDataToSend = new FormData()
+      formDataToSend.append('missionTitle', formData.missionTitle)
+      formDataToSend.append('shortDescription', formData.shortDescription)
+      formDataToSend.append('date', formData.date)
+      formDataToSend.append('time', formData.time)
+      formDataToSend.append('place', formData.place)
+      formDataToSend.append('fullDescription', formData.fullDescription)
+      
+      if (formData.image) {
+        formDataToSend.append('image', formData.image)
+      }
+
+      // Send to backend API
+      const response = await axios.post(
+        'http://localhost:5000/api/missions',
+        formDataToSend,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      )
+
+      console.log('Mission saved successfully:', response.data)
 
       // Show success modal
       setShowSuccessModal(true)
@@ -93,6 +117,10 @@ const MissionFormPage = () => {
       }, 3000)
     } catch (error) {
       console.error("Error submitting mission:", error)
+      
+      // Show error message
+      const errorMessage = error.response?.data?.message || "Failed to save mission. Please try again."
+      alert(errorMessage)
     } finally {
       setIsSubmitting(false)
     }
