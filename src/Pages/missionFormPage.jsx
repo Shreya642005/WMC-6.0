@@ -72,6 +72,31 @@ const MissionFormPage = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000))
 
+      // Create new mission object
+      const newMission = {
+        id: Date.now(), // Simple ID generation
+        title: formData.missionTitle,
+        description: formData.shortDescription,
+        date: formData.date,
+        time: formData.time || "00:00",
+        location: formData.place,
+        urgency: "medium", // Default urgency
+        status: "completed",
+        lat: 40.7128 + (Math.random() - 0.5) * 0.1, // Random coords around NYC
+        lng: -74.006 + (Math.random() - 0.5) * 0.1,
+        fullDescription: formData.fullDescription,
+        tags: formData.place.toLowerCase().split(' ').filter(tag => tag.length > 2)
+      }
+
+      // Save to localStorage
+      const existingMissions = JSON.parse(localStorage.getItem('spiderman-missions') || '[]')
+      const updatedMissions = [newMission, ...existingMissions]
+      localStorage.setItem('spiderman-missions', JSON.stringify(updatedMissions))
+
+      // Emit event for All Missions page to listen
+      const event = new CustomEvent('newMissionAdded', { detail: newMission })
+      window.dispatchEvent(event)
+
       // Show success modal
       setShowSuccessModal(true)
 

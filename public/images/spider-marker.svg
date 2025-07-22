@@ -1,0 +1,36 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="spiderGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7f1d1d;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Spider body -->
+  <ellipse cx="16" cy="20" rx="6" ry="8" fill="url(#spiderGradient)" stroke="#000" stroke-width="1"/>
+  
+  <!-- Spider head -->
+  <circle cx="16" cy="12" r="4" fill="url(#spiderGradient)" stroke="#000" stroke-width="1"/>
+  
+  <!-- Spider legs -->
+  <g stroke="#dc2626" stroke-width="2" fill="none">
+    <!-- Left legs -->
+    <path d="M10 16 L4 12"/>
+    <path d="M10 18 L2 18"/>
+    <path d="M10 20 L4 24"/>
+    <path d="M10 22 L6 28"/>
+    
+    <!-- Right legs -->
+    <path d="M22 16 L28 12"/>
+    <path d="M22 18 L30 18"/>
+    <path d="M22 20 L28 24"/>
+    <path d="M22 22 L26 28"/>
+  </g>
+  
+  <!-- Spider eyes -->
+  <circle cx="14" cy="11" r="1" fill="#fff"/>
+  <circle cx="18" cy="11" r="1" fill="#fff"/>
+  
+  <!-- Spider symbol on abdomen -->
+  <path d="M16 18 L14 22 L18 22 Z" fill="#000" opacity="0.5"/>
+</svg>
